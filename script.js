@@ -1424,33 +1424,138 @@ do {
 // block.prepend(title, age)
 // age.prepend(pOne,pTwo)
 
-let main = document.createElement("main");
-let table = document.createElement("table");
-let thead = document.createElement("thead");
-let tbody = document.createElement("tbody");
+// let main = document.createElement("main");
+// let table = document.createElement("table");
+// let thead = document.createElement("thead");
+// let tbody = document.createElement("tbody");
+// let arr = [];
+// let tr = document.createElement("tr");
+// for (let i = 0; i <= 7; i++) {
+//   let td = document.createElement("td");
+//   arr.push(td);
+// }
+// let stat = arr[0]
+// let date = arr[1]
+// let group = arr[2]
+// let progress = arr[3]
+// let course = arr[4]
+// let count = arr[5]
+// let days = arr[6]
+// let classroom = arr[7]
+
+// stat.innerHTML = 'Off'
+// date.innerHTML ='2 сентября'
+// group.innerHTML ='204'
+// progress.innerHTML ='86%'
+// course.innerHTML =''
+// count.innerHTML =''
+// days.innerHTML =''
+// classroom.innerHTML =''
+
+// let inp = document.querySelector("input");
+// let form = document.forms.form;
+// form.onsubmit = (event) => {
+//   event.preventDefault();
+//   error = false;
+//   if (inp.value.length === 0) {
+//     error = true;
+//   }
+//   if (error) {
+//   } else {
+//     submit();
+//   }
+// };
+
+// function submit() {
+//   let user = {};
+//   let fm = new FormData(form);
+//   fm.forEach((value, key) => {
+//     user[key] = value;
+//   });
+//   console.log(user);
+// }
+
+// let main = document.createElement("main");
+// let box = document.createElement("div");
+// let arr = [];
+// let arrTitle = []
+// let arrTime = []
+// for (i = 0; i <= 3; i++) {
+//   let title = document.createElement('h1');
+//   arrTitle.push(title);
+//   let time = document.createElement('p')
+//   arr.push(item);
+//   let item = document.createElement("div");
+//   arr.push(item);
+// }
+// let first = arr[0];
+// let seconds = arr[1];
+// let third = arr[2];
+// let fourth = arr[3];
+
+// first.classList.add("item");
+// seconds.classList.add("item");
+// third.classList.add("item");
+// fourth.classList.add("item");
+// box.classList.add("box");
+
+// document.body.append(main);
+// main.append(box);
+// box.append(first, seconds, third, fourth);
+let box = document.createElement("div");
+let container = document.querySelector(".container");
+let showFive = document.querySelector(".showFive");
+let showAll = document.querySelector(".showAll");
+let modal = document.querySelector('.modal')
 let arr = [];
-let tr = document.createElement("tr");
-for (let i = 0; i <= 7; i++) {
-  let td = document.createElement("td");
-  arr.push(td);
+let icons = {};
+
+box.classList.add("box");
+
+for (let i = 0; i <= 6; i++) {
+  let item = document.createElement("div");
+  let imgBox = document.createElement("div");
+  let img = document.createElement("img");
+  let itemTitle = document.createElement("h1");
+  let info = document.createElement("p");
+  let iconBox = document.createElement("div");
+  let button = document.createElement("button");
+
+  imgBox.classList.add("imgBox");
+  item.classList.add("item");
+  img.classList.add("itemImg");
+  //   itemTitle.classList.add()
+  info.classList.add("itemInfo");
+  iconBox.classList.add("iconBox");
+
+  button.innerHTML = "В избранное";
+  itemTitle.innerHTML = "MEN'S CLOTHING (120)";
+  info.innerHTML =
+    "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday";
+
+  for (let k = 0; k <= 2; k++) {
+    let itemIcon = document.createElement("div");
+    let icon = document.createElement("img");
+    let num = document.createElement("p");
+
+    itemIcon.classList.add("itemIconBox");
+    icon.classList.add("icon");
+    num.classList.add("num");
+  }
+
+  arr.push(item);
+  box.prepend(item);
+  item.append(imgBox, itemTitle, info, iconBox, button);
+  imgBox.prepend(img);
+  img.src = "img/81fPKd-2AYL 1.png";
+
+  showFive.onclick = () => {
+    arr[6].style.display = "none";
+    arr[5].style.display = "none";
+  };
+  showAll.onclick = () => {
+    arr[6].style.display = "flex";
+    arr[5].style.display = "flex";
+  };
 }
-let stat = arr[0]
-let date = arr[1]
-let group = arr[2]
-let progress = arr[3]
-let course = arr[4]
-let count = arr[5]
-let days = arr[6]
-let classroom = arr[7]
-
-
-
-stat.innerHTML = 'Off'
-date.innerHTML ='2 сентября'
-group.innerHTML ='204'
-progress.innerHTML ='86%'
-course.innerHTML =''
-count.innerHTML =''
-days.innerHTML =''
-classroom.innerHTML =''
-
+container.append(box);
